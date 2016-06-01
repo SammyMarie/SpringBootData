@@ -6,7 +6,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -31,5 +33,14 @@ public class SpringBootDataApp {
 
         Book book = repository.findByPageCount(100);
         System.out.println("\n" + book);
+
+        book.setTitle("A test book");
+        book.setPageCount(200);
+        book.setPublishDate(new Date());
+        book.setPrice(new BigDecimal("200.00"));
+
+        repository.save(book);
+        Book saved = repository.save(book);
+        System.out.println("Saved! " + saved);
     }
 }
