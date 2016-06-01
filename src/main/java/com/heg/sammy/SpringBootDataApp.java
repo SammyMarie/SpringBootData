@@ -28,5 +28,8 @@ public class SpringBootDataApp {
         for (Book book: books) {
             System.out.println(book);
         }
+
+        Book book = repository.findByPageCount(100);
+        System.out.println("\n" + book);
     }
 }
