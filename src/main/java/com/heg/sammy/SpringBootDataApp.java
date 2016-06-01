@@ -17,7 +17,7 @@ import java.util.List;
 @SpringBootApplication
 public class SpringBootDataApp {
 
-    public static void main(String[] args){
+    public static void main(String... args){
         ApplicationContext context = SpringApplication.run(SpringBootDataApp.class, args);
         BookRepository repository = context.getBean(BookRepository.class);
 
